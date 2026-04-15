@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Bento Dark Theme Tokens ─────────────────────────────────────────────── */
+:root {
+  --bg:          #080809;
+  --s1:          #0D0D0F;
+  --s2:          #131315;
+  --s3:          #191A1C;
+  --s4:          #1F2022;
+  --border:      #1E1E22;
+  --border-h:    #282830;
+
+  --primary:     #FAD4C0;
+  --primary-dim: rgba(250, 212, 192, 0.10);
+  --secondary:   #80A1C1;
+  --success:     #4ADE80;
+  --success-dim: rgba(74, 222, 128, 0.10);
+  --warning:     #FBBF24;
+  --warning-dim: rgba(251, 191, 36, 0.10);
+
+  --t1: #EDEDEF;
+  --t2: #8E8E9A;
+  --t3: #3E3E48;
+
+  --radius:    16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+  --gap:       10px;
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Keyframes ───────────────────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+/* ─── Dot Grid Background ─────────────────────────────────────────────────── */
+.dot-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Nav Link ────────────────────────────────────────────────────────────── */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  color: var(--t2);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.nav-link:hover { color: var(--t1); background: var(--s3); }
+
+/* ─── Bento Card ──────────────────────────────────────────────────────────── */
+.bento-card {
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  overflow: hidden;
+}
+.bento-card:hover { border-color: var(--border-h); }
+
+/* ─── Project Card ────────────────────────────────────────────────────────── */
+.project-card {
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.project-card:hover {
+  border-color: var(--border-h);
+  transform: translateY(-2px);
+}
+.project-card .arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--t3);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.project-card:hover .arrow { color: var(--t2); transform: translate(2px, -2px); }
+
+/* ─── Buttons ─────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #1A0F09;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--s2);
+  color: var(--t2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.btn-ghost:hover {
+  background: var(--s3);
+  color: var(--t1);
+  border-color: var(--border-h);
+  transform: translateY(-1px);
+}
+
+/* ─── Skill Pill ──────────────────────────────────────────────────────────── */
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 12px;
+  color: var(--t2);
+  font-weight: 500;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.pill:hover { color: var(--t1); border-color: var(--border-h); }
+.pill.accent {
+  background: var(--primary-dim);
+  border-color: rgba(250, 212, 192, 0.2);
+  color: var(--primary);
+}
+
+/* ─── Stat Box ────────────────────────────────────────────────────────────── */
+.stat-box {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+.stat-val {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 11px; color: var(--t3); font-weight: 500; }
+
+/* ─── Section Label ───────────────────────────────────────────────────────── */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t3);
+}
+
+/* ─── Card Label ──────────────────────────────────────────────────────────── */
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 16px;
+}
+
+/* ─── Tech Tag ────────────────────────────────────────────────────────────── */
+.tech-tag {
+  padding: 3px 8px;
+  background: var(--s4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  font-size: 11px;
+  color: var(--t3);
+  font-family: var(--font-mono), monospace;
+}
+
+/* ─── Contact Glow ────────────────────────────────────────────────────────── */
+.contact-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(250, 212, 192, 0.05), transparent 70%);
+  pointer-events: none;
+}
