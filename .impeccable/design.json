@@ -1,102 +1,559 @@
 {
   "schemaVersion": 2,
-  "title": "Design System: Engineering journal",
+  "generatedAt": "2026-11-02T17:40:07.323242+00:00",
+  "title": "Design System: Bhinu Puvvala portfolio",
   "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Bg",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Surface hover",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "tag-bg": {
+        "role": "primary",
+        "displayName": "Tag bg",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "Selection",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "scrollbar": {
+        "role": "neutral",
+        "displayName": "Scrollbar",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "strong": {
+        "role": "neutral",
+        "displayName": "Strong",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "profile-role": {
+        "role": "neutral",
+        "displayName": "Profile role",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "nav-rule": {
+        "role": "neutral",
+        "displayName": "Nav rule",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "resume": {
+        "role": "neutral",
+        "displayName": "Resume",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "status-dot": {
+        "role": "neutral",
+        "displayName": "Status dot",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "section-heading": {
+        "role": "neutral",
+        "displayName": "Section heading",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "current-border": {
+        "role": "primary",
+        "displayName": "Current border",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "current-text": {
+        "role": "primary",
+        "displayName": "Current text",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "entry-role": {
+        "role": "neutral",
+        "displayName": "Entry role",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "tag-text": {
+        "role": "primary",
+        "displayName": "Tag text",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "project-type": {
+        "role": "neutral",
+        "displayName": "Project type",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "preview-title": {
+        "role": "neutral",
+        "displayName": "Preview title",
+        "tonalRamp": [
+          "#08090a",
+          "#111214",
+          "#24262b",
+          "#383b43",
+          "#8b8e98",
+          "#b0b2b8",
+          "#dfe0e4",
+          "#f7f8f8"
+        ]
+      },
+      "storage-border": {
+        "role": "primary",
+        "displayName": "Storage border",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "storage-cell": {
+        "role": "primary",
+        "displayName": "Storage cell",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "storage-active": {
+        "role": "primary",
+        "displayName": "Storage active",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "preview-caption": {
+        "role": "primary",
+        "displayName": "Preview caption",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "memory-ground": {
+        "role": "primary",
+        "displayName": "Memory ground",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "memory-line": {
+        "role": "primary",
+        "displayName": "Memory line",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "memory-border": {
+        "role": "primary",
+        "displayName": "Memory border",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      },
+      "memory-active": {
+        "role": "primary",
+        "displayName": "Memory active",
+        "tonalRamp": [
+          "#111216",
+          "#191b28",
+          "#252a3a",
+          "#41475f",
+          "#51576f",
+          "#8e96bf",
+          "#a9afff",
+          "#b7bbed"
+        ]
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "color",
+        "value": "0.2s",
+        "purpose": "Navigation and social color transitions."
+      },
+      {
+        "name": "nav-rule",
+        "value": "0.25s ease",
+        "purpose": "Navigation rule width and color."
+      },
+      {
+        "name": "image",
+        "value": "0.3s",
+        "purpose": "Preview image scale to 1.04 on hover."
+      }
+    ],
     "breakpoints": [
       {
         "name": "wide",
-        "value": "1600px",
+        "value": "1450px",
         "query": "min-width"
       },
       {
-        "name": "tablet",
-        "value": "1000px",
+        "name": "compact-desktop",
+        "value": "1100px",
         "query": "max-width"
       },
       {
-        "name": "mobile",
-        "value": "700px",
+        "name": "stacked",
+        "value": "900px",
         "query": "max-width"
-      }
-    ],
-    "motion": [
-      {
-        "name": "action",
-        "value": "0.2s",
-        "purpose": "Primary background and link icon transitions."
       },
       {
-        "name": "switch",
-        "value": "0.25s",
-        "purpose": "Zone-map switch thumb translation."
+        "name": "phone",
+        "value": "600px",
+        "query": "max-width"
       },
       {
-        "name": "row-group",
-        "value": "0.3s",
-        "purpose": "Row-group background and border changes."
+        "name": "short-desktop",
+        "value": "760px",
+        "query": "max-height, min-width: 901px"
       }
     ],
     "focus": {
       "outline": "2px solid var(--accent)",
       "outlineOffset": "5px"
     },
-    "shadows": []
+    "rampPolicy": "Intentional implemented neutral and lavender local shades, shown dark to light. These contextual scales are not additional CSS custom properties.",
+    "assetSources": [
+      {
+        "path": "public/projects/videre.png",
+        "source": "https://github.com/bhinu/Videre/blob/main/public/screenshot-app.png",
+        "purpose": "Videre interface thumbnail"
+      }
+    ]
   },
   "components": [
     {
-      "name": "Primary action",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Square ink action with rust hover.",
-      "html": "<a class=\"ds-primary\" href=\"#work\">Explore work \u2197</a>",
-      "css": ".ds-primary{display:inline-flex;align-items:center;gap:22px;min-height:50px;padding:13px 20px;background:var(--ink);color:var(--paper);font:500 14px Inter,sans-serif;text-decoration:none;transition:background .2s}.ds-primary:hover{background:var(--accent)}.ds-primary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
-    },
-    {
-      "name": "Text link",
-      "kind": "button",
-      "description": "Open secondary action.",
-      "html": "<a class=\"ds-link\" href=\"#contact\">Get in touch \u2197</a>",
-      "css": ".ds-link{display:inline-flex;gap:12px;padding:8px 0;color:var(--ink);font:600 14px Inter,sans-serif;text-decoration:none}.ds-link:hover{color:var(--accent)}.ds-link:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
-    },
-    {
-      "name": "Navigation",
+      "name": "Section navigation",
       "kind": "nav",
-      "description": "Open text navigation with rust hover.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Preview navigation\"><a href=\"#work\">Work</a><a href=\"#about\">About</a></nav>",
-      "css": ".ds-nav{display:flex;gap:34px;font:14px Inter,sans-serif;color:var(--ink)}.ds-nav a{padding:10px 0;color:inherit;text-decoration:none}.ds-nav a:hover{color:var(--accent)}.ds-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+      "description": "Active section uses a longer near-white rule; hidden in the stacked layout.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Section navigation\"><a class=\"ds-active\" href=\"#about\" aria-current=\"location\"><span></span>About</a><a href=\"#experience\"><span></span>Experience</a></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;gap:4px;width:220px;font-family:Inter,sans-serif}.ds-nav a{display:flex;align-items:center;gap:17px;min-height:40px;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;transition:color .2s}.ds-nav span{height:1px;width:28px;background:#41444e;transition:width .25s ease,background .25s ease}.ds-nav a:hover,.ds-nav .ds-active{color:var(--text)}.ds-nav a:hover span,.ds-nav .ds-active span{width:60px;background:var(--text)}.ds-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}@media(max-width:900px){.ds-nav{display:none}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
     },
     {
-      "name": "Zone-map control",
-      "kind": "custom",
-      "description": "Static preview of the pressed zone-map button; the application updates the model.",
-      "html": "<div class=\"ds-storage\"><button class=\"ds-toggle\" aria-pressed=\"true\">Zone maps <span>ON</span><i></i></button></div>",
-      "css": ".ds-storage{padding:20px;background:var(--dark)}.ds-toggle{display:flex;align-items:center;gap:9px;padding:8px 0 8px 8px;border:0;background:none;color:var(--paper);font:10px Inter,sans-serif;cursor:pointer}.ds-toggle span{color:var(--green);width:22px}.ds-toggle i{position:relative;width:25px;height:14px;border:1px solid var(--green);border-radius:10px;background:var(--green)}.ds-toggle i:after{content:\"\";position:absolute;width:8px;height:8px;left:13px;top:2px;border-radius:50%;background:var(--dark)}.ds-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+      "name": "Resume text link",
+      "kind": "button",
+      "description": "Unfilled resume action with an inline directional icon.",
+      "html": "<a class=\"ds-resume\" href=\"/resume.pdf\">View resume <svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-resume{display:inline-flex;align-items:center;gap:9px;padding:9px 0;color:#d9dbe2;font:500 13px Inter,sans-serif;text-decoration:none}.ds-resume:hover{color:var(--accent)}.ds-resume:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
     },
     {
-      "name": "Memory stage",
+      "name": "Technology tag",
+      "kind": "chip",
+      "refersTo": "technology-tag",
+      "description": "Static technology label; not an action.",
+      "html": "<span class=\"ds-tag\">Python</span>",
+      "css": ".ds-tag{display:inline-block;font:10px/1.5 Inter,sans-serif;padding:4px 9px;background:var(--tag-bg);color:#b7bbed;border-radius:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Current role label",
       "kind": "custom",
-      "description": "Static preview of a selected workflow stage; the application changes the caption on activation.",
-      "html": "<div class=\"ds-memory\"><button class=\"ds-stage\" aria-pressed=\"true\"><span>01</span>Observe</button></div>",
-      "css": ".ds-memory{padding:23px 28px;background:#e9ddd1;color:#533d30}.ds-stage{display:flex;flex-direction:column;align-items:center;gap:13px;padding:0;background:none;border:0;color:inherit;font:11px Inter,sans-serif;cursor:pointer}.ds-stage span{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #8d4229;border-radius:50%;background:#8d4229;color:#fff3e9;font-size:10px;transition:background .2s}.ds-stage:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+      "refersTo": "current-label",
+      "description": "Small bordered label alongside a current company name.",
+      "html": "<span class=\"ds-current\">Current</span>",
+      "css": ".ds-current{border:1px solid #30323d;padding:1px 6px;border-radius:4px;color:#b6bbdc;font:400 9px Inter,sans-serif}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Project heading link",
+      "kind": "button",
+      "description": "Project source link uses lavender hover and visible keyboard focus.",
+      "html": "<a class=\"ds-project-link\" href=\"https://github.com/bhinu/minicol\">minicol <svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-project-link{display:inline-flex;align-items:center;gap:7px;color:var(--text);font:500 16px/1.5 Inter,sans-serif;text-decoration:none}.ds-project-link:hover{color:var(--accent)}.ds-project-link:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:3px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
     }
   ],
   "narrative": {
-    "northStar": "Engineering journal",
-    "overview": "Warm paper, precise ink, and restrained rust give technical work an editorial voice. Open typography and thin rules establish hierarchy; project models explain behavior through small, legible interactions.",
+    "northStar": "Linear black, split portfolio",
+    "overview": "Linear\u2019s black aesthetic and Brittany Chiang\u2019s split portfolio layout are the user-chosen references. A sticky desktop profile anchors a scrolling history of About, Experience, and Projects. Copy states education, work, technologies, and qualified results directly, without promotional taglines.",
     "keyCharacteristics": [
-      "Open typography with serif emphasis.",
-      "Flat surfaces, thin rules, and distinct demonstration grounds.",
-      "Direct, keyboard-operable project models."
+      "Black ground, near-white hierarchy, neutral gray reading text, and restrained lavender states.",
+      "Inter for reading and navigation; mono only inside miniature project previews.",
+      "Open content rows, thin separators, and small project thumbnails."
     ],
     "rules": [],
     "dos": [
-      "Do preserve open typography, thin rules, and model-specific grounds.",
-      "Do communicate interactive state in text and accessible button state as well as color.",
-      "Do retain model labels and benchmark qualifications alongside results."
+      "Do preserve the black palette and factual, qualified project copy.",
+      "Do keep the desktop profile persistent and stack the page at the established breakpoint.",
+      "Do preserve skip navigation, visible focus, descriptive link labels, and reduced-motion behavior."
     ],
     "donts": [
-      "Don't enclose every content section in a rounded card or introduce decorative shadows.",
-      "Don't hide essential copy behind motion or remove keyboard focus treatment."
+      "Don't restore warm paper, rust accents, or expressive serif typography.",
+      "Don't add promotional taglines or decorative card shells around every section.",
+      "Don't describe decorative project thumbnails as interactive demonstrations."
     ]
   }
 }

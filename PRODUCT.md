@@ -24,4 +24,4 @@ Retain Next.js, TypeScript, GitHub repository bhinu/bhinu.dev and Vercel deploym
 
 ## Brand Commitments
 
-Name: Bhinu Puvvala. User delegates visual judgment to improve the website.
+Name: Bhinu Puvvala. User explicitly chose Linear’s black aesthetic and Brittany Chiang’s split portfolio layout. Use straightforward factual copy, with no promotional taglines. Keep these preferences binding in future revisions.

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,21 +15,13 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://bhinu.dev"),
   alternates: { canonical: "/" },
   openGraph: {
     title: "Bhinu Puvvala — Software Engineer",
     description:
-      "Good systems. Down to the details. Storage engines, production backends, and on-device AI.",
+      "Software engineer working on backend systems, data infrastructure, and applied machine learning. UW–Madison, Class of 2027.",
     url: "https://bhinu.dev",
     type: "website",
   },
@@ -46,9 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
-      >
+      <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         {children}
       </body>
     </html>

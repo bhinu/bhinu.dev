@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Bhinu Puvvala — Good systems. Down to the details.";
+export const alt = "Bhinu Puvvala — Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -9,8 +9,8 @@ export default function Image() {
     (
       <div
         style={{
-          background: "#f3f1e9",
-          color: "#242820",
+          background: "#08090a",
+          color: "#f7f8f8",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -40,16 +40,23 @@ export default function Image() {
             lineHeight: 1.05,
           }}
         >
-          <span>Good systems.</span>
-          <span>
-            Down to the <span style={{ color: "#a43e25" }}>details.</span>
+          <span>Bhinu Puvvala</span>
+          <span
+            style={{
+              fontSize: 36,
+              color: "#b0b2b8",
+              letterSpacing: -1,
+              marginTop: 24,
+            }}
+          >
+            Backend systems · Data infrastructure · Applied ML
           </span>
         </div>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            borderTop: "1px solid #cfcec4",
+            borderTop: "1px solid #24262b",
             paddingTop: 24,
             fontSize: 20,
           }}

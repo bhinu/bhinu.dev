@@ -1,91 +1,154 @@
 ---
-name: Engineering journal
-description: A project-led engineering portfolio on warm paper.
+name: Bhinu Puvvala portfolio
+description: Black engineering portfolio with a persistent desktop profile and factual project history.
 colors:
-  paper: "#f3f1e9"
-  ink: "#242820"
-  muted: "#62675c"
-  line: "#cfcec4"
-  accent: "#a43e25"
-  dark: "#262e25"
-  green: "#cae0a5"
+  bg: "#08090a"
+  surface: "#111214"
+  surface-hover: "#151619"
+  text: "#f7f8f8"
+  secondary: "#b0b2b8"
+  muted: "#8b8e98"
+  line: "#24262b"
+  accent: "#a9afff"
+  tag-bg: "#191b28"
+  selection: "#35394f"
+  scrollbar: "#383b43"
+  strong: "#dfe0e4"
+  profile-role: "#e2e3e7"
+  nav-rule: "#41444e"
+  resume: "#d9dbe2"
+  status-dot: "#9da6b1"
+  section-heading: "#e1e2e6"
+  current-border: "#30323d"
+  current-text: "#b6bbdc"
+  entry-role: "#c7c9d0"
+  tag-text: "#b7bbed"
+  project-type: "#cbcdd5"
+  preview-title: "#d5d8e2"
+  storage-border: "#51576f"
+  storage-cell: "#252a3a"
+  storage-active: "#969fd8"
+  preview-caption: "#9fa4b7"
+  memory-ground: "#111216"
+  memory-line: "#41475f"
+  memory-border: "#8e96bf"
+  memory-active: "#929bd3"
 typography:
   display:
     fontFamily: "Inter, sans-serif"
-    fontSize: "clamp(60px, 7.3vw, 96px)"
-    fontWeight: 500
-    lineHeight: 1.03
+    fontSize: "45px"
+    fontWeight: 600
+    lineHeight: 1.15
     letterSpacing: "-0.04em"
+  section:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: "0.09em"
+  title:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "16px"
+    fontWeight: 500
+    lineHeight: 1.5
   body:
     fontFamily: "Inter, sans-serif"
-    lineHeight: 1.65
-  expressive:
-    fontFamily: "Instrument Serif, serif"
-    fontWeight: 400
-  code:
+    fontSize: "14px"
+    lineHeight: 1.9
+  label:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "10px"
+    lineHeight: 1.5
+  preview-caption:
     fontFamily: "JetBrains Mono, monospace"
+    fontSize: "6px"
+rounded:
+  focus: "3px"
+  current: "4px"
+  tag: "5px"
+  preview: "6px"
 spacing:
-  desktop-inset: "44px"
-  tablet-inset: "30px"
-  mobile-inset: "23px"
+  desktop-inset: "56px"
+  tablet-inset: "40px"
+  mobile-inset: "25px"
+  desktop-section: "96px"
+  tablet-section: "70px"
+  mobile-section: "62px"
 components:
-  button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    padding: "13px 20px"
-  button-primary-hover:
-    backgroundColor: "{colors.accent}"
+  technology-tag:
+    backgroundColor: "{colors.tag-bg}"
+    textColor: "{colors.tag-text}"
+    rounded: "{rounded.tag}"
+    padding: "4px 9px"
+    typography: "{typography.label}"
+  project-preview:
+    backgroundColor: "{colors.surface}"
+    rounded: "{rounded.preview}"
+    height: "83px"
+  current-label:
+    textColor: "{colors.current-text}"
+    rounded: "{rounded.current}"
+    padding: "1px 6px"
 ---
 
-# Design System: Engineering journal
+# Design System: Bhinu Puvvala portfolio
 
 ## Overview
 
-**Creative North Star: "Engineering journal"**
+**Creative North Star: "Linear black, split portfolio"**
 
-Warm paper, precise ink, and restrained rust give technical work an editorial voice. Open typography and thin rules establish hierarchy; project models explain behavior through small, legible interactions.
+Linear’s black aesthetic and Brittany Chiang’s split portfolio layout are the user-chosen references. A sticky desktop profile anchors a scrolling history of About, Experience, and Projects. Copy states education, work, technologies, and qualified results directly, without promotional taglines.
 
 **Key Characteristics:**
-- Open typography with serif emphasis.
-- Flat surfaces, thin rules, and distinct demonstration grounds.
-- Direct, keyboard-operable project models.
+
+- Black ground, near-white hierarchy, neutral gray reading text, and restrained lavender states.
+- Inter for reading and navigation; mono only inside miniature project previews.
+- Open content rows, thin separators, and small project thumbnails.
 
 ## Colors
 
-Rust is the primary accent for expressive headings, links on hover, and keyboard focus. Paper, ink, muted text, and rules form the neutral foundation. Dark and green distinguish the storage model and its active data; selection also uses green on ink. Local sage, clay, and pale neutral surfaces differentiate project models and the experience section without becoming global accents.
+### Primary
+
+Lavender `accent` marks link hover and keyboard focus. `tag-bg` and `tag-text` provide muted technology labels. Current-role and miniature-preview colors are intentional local lavender ramps, not additional brand accents.
+
+### Neutral
+
+`bg` is the page ground; `text` is the primary foreground. `secondary` carries reading copy and `muted` metadata. `line` separates education, secondary projects, and the footer. `surface` grounds thumbnails. `surface-hover` is defined in CSS but presently unused. The remaining named colors preserve implemented near-white text levels, selection, scrollbar, navigation rules, status dots, and preview details. All exact values above are extracted from `src/app/globals.css`; local shades are deliberate rather than undocumented palette drift.
 
 ## Typography
 
-Inter carries hierarchy and prose. Instrument Serif supplies italic heading emphasis and upright project decks and model captions. JetBrains Mono is reserved for queries, row indices, and timestamps. All three use system fallbacks and font-display swap.
+Inter is the sole reading family, loaded with swap through Next.js. JetBrains Mono is limited to thumbnail captions; there is no serif face. The frontmatter gives desktop roles, with About copy as the body reference. Experience and project descriptions use (12px) on desktop and (13px) at narrower sizes; metadata uses (9–12px). Uppercase section headings and navigation use tracking (0.09em).
 
-The display token describes the desktop hero. On mobile it becomes clamp(48px, 11.5vw, 76px), with line-height 1.06. Section headings use medium weight at 30px desktop and 26px mobile; project names and about/contact headings have their own larger scales. Main project prose is 14px desktop and 13px mobile, while introductory prose is 18px and 15px respectively. Body line-height is the baseline; longer copy uses contextual 1.7–1.85 leading. Supporting indices and model annotations are deliberately smaller than reading text.
+The name is (45px) normally, (38px) at widths up to (1100px), (46px) in the stacked tablet profile, and `clamp(33px, 8.5vw, 44px)` on phones. Section headings become (11px) on phones. Thumbnail mono captions grow from (6px) to (8px) on phones. Retain these contextual scales rather than applying one body size universally.
 
 ## Layout
 
-Centered content has a maximum width of 1240px, increasing to 1360px at a minimum viewport width of 1600px. Use the inset tokens: desktop by default, tablet at 1000px and below, mobile at 700px and below.
+The centered shell is (1190px) maximum including horizontal inset. Desktop uses a (380px) profile column, flexible right column, and (88px) gap. The profile sticks at the viewport top with (100svh) height capped at (1100px); the right column scrolls with the document. At widths from (1450px), the shell grows to (1260px), profile to (400px), and gap to (115px). At widths up to (1100px), columns use (320px) plus flexible content and a (55px) gap.
 
-Desktop pairs project copy with models and arranges secondary projects, experience rows, about, and contact in columns. At 700px and below these stack; the storage model retains its eight-column row-group grid. Mobile navigation becomes a toggle-controlled vertical panel beneath the header. Keep content visible without entrance animation and prevent model overflow by preserving flexible columns and min-width: 0.
+At widths up to (900px), the shell stacks with a (750px) maximum, the profile loses sticky positioning, and section navigation is hidden. At widths up to (600px), dates stack above experience details and project text precedes its (160px × 95px) thumbnail. Desktop experience rows use (103px) dates and an (18px) gap; project rows use (122px) thumbnails and a (22px) gap. Short desktop viewports up to (760px) high reduce profile spacing. Use flexible columns with `min-width: 0` to avoid overflow.
 
 ## Elevation & Depth
 
-Surfaces are flat, with no box shadows. Thin rules, paper-to-tonal-ground changes, and active data fills provide separation and state.
+No box shadows. Subtle neutral surface changes, one-pixel borders, and typography establish separation. Project previews enlarge images slightly on hover; sections remain flat on the page ground.
 
 ## Shapes
 
-Buttons, project grounds, and row-group cells have square corners. Circles are reserved for status dots and memory stages; the zone-map switch uses a pill track. Borders are predominantly one pixel.
+Small radii distinguish focus outlines, current-role labels, tags, and thumbnails. One-pixel rules are the main boundary treatment. Status dots and memory-preview nodes are circular; storage-preview cells have nearly square (1px) corners.
 
 ## Components
 
-- **Primary action:** ink on paper, medium 14px type, minimum height 50px; rust on hover. At mobile sizes use 12px type, 47px minimum height, and 12px 17px padding.
-- **Text links and navigation:** open text with generous vertical padding; rust hover and a small diagonal icon translation where present. The mobile menu button is 44px square and exposes expanded state and the controlled navigation ID.
-- **Storage-pruning model:** a dark ground, green active cells, textual ON/OFF state, and a native toggle button with aria-pressed. The read count and explanation update in a polite live region; the cell grid is decorative to assistive technology. Label it as an interactive model.
-- **MuscleMemory model:** four native stage buttons on a clay ground; the selected circular stage is rust and exposes aria-pressed. Stage text updates in a polite live region. Preserve the explicit workflow-model label.
-- **Keyboard and motion:** links and buttons share a two-pixel rust focus outline offset five pixels. Preserve the visible-on-focus skip link. State transitions last 0.2–0.3 seconds; reduced-motion preference disables transitions, animations, and smooth scrolling.
+- **Section navigation:** uppercase (11px), (40px) minimum row height. A one-pixel leading rule expands from (28px) to (60px) on hover and active state; text and rule become near-white. The component tracks the current scroll section.
+- **Resume and text links:** open text with small inline icons. Most primary text links turn lavender on hover; social and secondary repository links turn near-white. There are no filled CTA buttons or form inputs.
+- **Technology tags:** compact lavender-tinted labels with wrapped rows and (6px) gaps. They communicate technologies and are not controls.
+- **Experience rows:** open date/body grid, role and location metadata, evidence bullets, and technology tags. Holos has a small bordered Current label.
+- **Project rows:** source links, direct project descriptions, explicit limitations, tags, and small previews. minicol and MuscleMemory use decorative CSS diagrams, not interactive models. Videre uses `public/projects/videre.png`, sourced from https://github.com/bhinu/Videre/blob/main/public/screenshot-app.png. Keep its interface image descriptive and its source-code link accessible.
+- **Focus and motion:** links and buttons have a lavender (2px) outline offset (5px). Preserve the visible-on-focus skip link. Color transitions use (0.2s), navigation-rule transitions (0.25s ease), and image scale (0.3s). Reduced motion disables transitions, animations, and smooth scrolling.
 
 ## Do's and Don'ts
 
-- **Do** preserve open typography, thin rules, and model-specific grounds.
-- **Do** communicate interactive state in text and accessible button state as well as color.
-- **Do** retain model labels and benchmark qualifications alongside results.
-- **Don't** enclose every content section in a rounded card or introduce decorative shadows.
-- **Don't** hide essential copy behind motion or remove keyboard focus treatment.
+- Do preserve the black palette and factual, qualified project copy.
+- Do keep the desktop profile persistent and stack the page at the established breakpoint.
+- Do preserve skip navigation, visible focus, descriptive link labels, and reduced-motion behavior.
+- Don't restore warm paper, rust accents, or expressive serif typography.
+- Don't add promotional taglines or decorative card shells around every section.
+- Don't describe decorative project thumbnails as interactive demonstrations.

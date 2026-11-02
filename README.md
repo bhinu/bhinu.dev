@@ -16,6 +16,6 @@ npm run check
 npm run build
 ```
 
-The portfolio includes an interactive, illustrative minicol zone-map model and a MuscleMemory workflow explorer. Project claims retain benchmark conditions and link to source repositories. `public/resume.pdf` is the general SWE resume; private transcript data is never shipped.
+The portfolio uses a black visual system and a split layout: a sticky profile and section navigation on desktop, with experience and project content in a scrolling column. On mobile the layout stacks. Project descriptions retain benchmark conditions and link directly to source repositories. `public/resume.pdf` is the general SWE resume; private transcript data is never shipped.
 
 Visual tokens and responsive rules are documented in DESIGN.md. Resume content is grounded in the owner’s supplied documents; PRODUCT.md records content constraints.
