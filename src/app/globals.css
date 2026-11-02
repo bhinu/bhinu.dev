@@ -4,15 +4,26 @@
 
 :root {
   --bg: #08090a;
-  --surface: #111214;
-  --surface-hover: #151619;
+  --surface: #10151d;
+  --surface-hover: #151d29;
   --text: #f7f8f8;
   --secondary: #b0b2b8;
   --muted: #8b8e98;
-  --line: #24262b;
-  --accent: #a9afff;
-  --tag-bg: #191b28;
+  --line: #222a36;
+  --accent: #a1bfee;
+  --tag-bg: #141f30;
   color-scheme: dark;
+  --strong: #dfe0e4;
+  --heading-secondary: #d9dbe2;
+  --selection: #253d5c;
+  --scrollbar: #383b43;
+  --nav-line: #394d67;
+  --indicator: #8caedb;
+  --badge-line: #2c405c;
+  --tag-text: #adc8ed;
+  --preview-line: #405879;
+  --preview-fill: #1c2d44;
+  --preview-active: #86a9d9;
 }
 * {
   box-sizing: border-box;
@@ -869,40 +880,27 @@ h2 {
   }
 }
 
-:root {
-  --strong: #dfe0e4;
-  --heading-secondary: #d9dbe2;
-  --selection: #35394f;
-  --scrollbar: #383b43;
-  --nav-line: #41444e;
-  --indicator: #9da6b1;
-  --badge-line: #30323d;
-  --tag-text: #b7bbed;
-  --preview-line: #51576f;
-  --preview-fill: #252a3a;
-  --preview-active: #969fd8;
-}
 :root[data-theme="light"] {
   --bg: #f8f9fb;
-  --surface: #eef0f4;
-  --surface-hover: #e8ebf0;
+  --surface: #edf2fa;
+  --surface-hover: #e3ecf8;
   --text: #1b2029;
   --secondary: #474e5b;
   --muted: #626a78;
-  --line: #d7dce4;
-  --accent: #455e9c;
-  --tag-bg: #e6eaf3;
+  --line: #d4dfec;
+  --accent: #315e99;
+  --tag-bg: #e5edf8;
   --strong: #29313e;
   --heading-secondary: #394351;
-  --selection: #d8e1f6;
+  --selection: #cddff5;
   --scrollbar: #a4acba;
-  --nav-line: #9aa4b4;
-  --indicator: #61718b;
-  --badge-line: #c4ccdb;
-  --tag-text: #40547a;
-  --preview-line: #9ca9bf;
-  --preview-fill: #dce3ef;
-  --preview-active: #617db2;
+  --nav-line: #91a8c6;
+  --indicator: #597da9;
+  --badge-line: #bdcfe6;
+  --tag-text: #3b5d89;
+  --preview-line: #8da8cb;
+  --preview-fill: #d6e3f5;
+  --preview-active: #5b80b4;
   color-scheme: light;
 }
 .theme-toggle {
@@ -941,4 +939,32 @@ h2 {
   .profile {
     padding-top: 86px;
   }
+}
+
+/* Blue is limited to controls, tags, and small navigation details. */
+
+.section-nav a.active .nav-line,
+.section-nav a:hover .nav-line {
+  background: var(--accent);
+}
+.social-links a {
+  border-radius: 8px;
+}
+.social-links a:hover {
+  background: var(--tag-bg);
+  color: var(--accent);
+}
+.current-label {
+  background: var(--tag-bg);
+  border-color: var(--badge-line);
+  color: var(--tag-text);
+}
+.theme-toggle {
+  border-color: var(--badge-line);
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+h1 span {
+  color: var(--accent);
 }

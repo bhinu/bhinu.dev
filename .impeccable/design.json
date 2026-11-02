@@ -6,437 +6,103 @@
     "colorMeta": {
       "bg": {
         "role": "neutral",
-        "displayName": "Bg",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "displayName": "bg",
+        "tonalRamp": ["#08090a"]
       },
       "surface": {
-        "role": "neutral",
-        "displayName": "Surface",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "role": "accent",
+        "displayName": "surface",
+        "tonalRamp": ["#10151d"]
       },
       "surface-hover": {
-        "role": "neutral",
-        "displayName": "Surface hover",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "role": "accent",
+        "displayName": "surface-hover",
+        "tonalRamp": ["#151d29"]
       },
       "text": {
         "role": "neutral",
-        "displayName": "Text",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "displayName": "text",
+        "tonalRamp": ["#f7f8f8"]
       },
       "secondary": {
         "role": "neutral",
-        "displayName": "Secondary",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "displayName": "secondary",
+        "tonalRamp": ["#b0b2b8"]
       },
       "muted": {
         "role": "neutral",
-        "displayName": "Muted",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "displayName": "muted",
+        "tonalRamp": ["#8b8e98"]
       },
       "line": {
-        "role": "neutral",
-        "displayName": "Line",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "role": "accent",
+        "displayName": "line",
+        "tonalRamp": ["#222a36"]
       },
       "accent": {
-        "role": "primary",
-        "displayName": "Accent",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
+        "role": "accent",
+        "displayName": "accent",
+        "tonalRamp": ["#a1bfee"]
       },
       "tag-bg": {
-        "role": "primary",
-        "displayName": "Tag bg",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "selection": {
-        "role": "primary",
-        "displayName": "Selection",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "scrollbar": {
-        "role": "neutral",
-        "displayName": "Scrollbar",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "role": "accent",
+        "displayName": "tag-bg",
+        "tonalRamp": ["#141f30"]
       },
       "strong": {
         "role": "neutral",
-        "displayName": "Strong",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "displayName": "strong",
+        "tonalRamp": ["#dfe0e4"]
       },
-      "profile-role": {
+      "heading-secondary": {
         "role": "neutral",
-        "displayName": "Profile role",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+        "displayName": "heading-secondary",
+        "tonalRamp": ["#d9dbe2"]
       },
-      "nav-rule": {
-        "role": "neutral",
-        "displayName": "Nav rule",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "selection": {
+        "role": "accent",
+        "displayName": "selection",
+        "tonalRamp": ["#253d5c"]
       },
-      "resume": {
-        "role": "neutral",
-        "displayName": "Resume",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "scrollbar": {
+        "role": "accent",
+        "displayName": "scrollbar",
+        "tonalRamp": ["#383b43"]
       },
-      "status-dot": {
-        "role": "neutral",
-        "displayName": "Status dot",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "nav-line": {
+        "role": "accent",
+        "displayName": "nav-line",
+        "tonalRamp": ["#394d67"]
       },
-      "section-heading": {
-        "role": "neutral",
-        "displayName": "Section heading",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "indicator": {
+        "role": "accent",
+        "displayName": "indicator",
+        "tonalRamp": ["#8caedb"]
       },
-      "current-border": {
-        "role": "primary",
-        "displayName": "Current border",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "current-text": {
-        "role": "primary",
-        "displayName": "Current text",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "entry-role": {
-        "role": "neutral",
-        "displayName": "Entry role",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "badge-line": {
+        "role": "accent",
+        "displayName": "badge-line",
+        "tonalRamp": ["#2c405c"]
       },
       "tag-text": {
-        "role": "primary",
-        "displayName": "Tag text",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
+        "role": "accent",
+        "displayName": "tag-text",
+        "tonalRamp": ["#adc8ed"]
       },
-      "project-type": {
-        "role": "neutral",
-        "displayName": "Project type",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "preview-line": {
+        "role": "accent",
+        "displayName": "preview-line",
+        "tonalRamp": ["#405879"]
       },
-      "preview-title": {
-        "role": "neutral",
-        "displayName": "Preview title",
-        "tonalRamp": [
-          "#08090a",
-          "#111214",
-          "#24262b",
-          "#383b43",
-          "#8b8e98",
-          "#b0b2b8",
-          "#dfe0e4",
-          "#f7f8f8"
-        ]
+      "preview-fill": {
+        "role": "accent",
+        "displayName": "preview-fill",
+        "tonalRamp": ["#1c2d44"]
       },
-      "storage-border": {
-        "role": "primary",
-        "displayName": "Storage border",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "storage-cell": {
-        "role": "primary",
-        "displayName": "Storage cell",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "storage-active": {
-        "role": "primary",
-        "displayName": "Storage active",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "preview-caption": {
-        "role": "primary",
-        "displayName": "Preview caption",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "memory-ground": {
-        "role": "primary",
-        "displayName": "Memory ground",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "memory-line": {
-        "role": "primary",
-        "displayName": "Memory line",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "memory-border": {
-        "role": "primary",
-        "displayName": "Memory border",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
-      },
-      "memory-active": {
-        "role": "primary",
-        "displayName": "Memory active",
-        "tonalRamp": [
-          "#111216",
-          "#191b28",
-          "#252a3a",
-          "#41475f",
-          "#51576f",
-          "#8e96bf",
-          "#a9afff",
-          "#b7bbed"
-        ]
+      "preview-active": {
+        "role": "accent",
+        "displayName": "preview-active",
+        "tonalRamp": ["#86a9d9"]
       }
     },
     "shadows": [],
@@ -495,7 +161,66 @@
         "source": "https://github.com/bhinu/Videre/blob/main/public/screenshot-app.png",
         "purpose": "Videre interface thumbnail"
       }
-    ]
+    ],
+    "themes": {
+      "dark": {
+        "bg": "#08090a",
+        "surface": "#10151d",
+        "surface-hover": "#151d29",
+        "text": "#f7f8f8",
+        "secondary": "#b0b2b8",
+        "muted": "#8b8e98",
+        "line": "#222a36",
+        "accent": "#a1bfee",
+        "tag-bg": "#141f30",
+        "strong": "#dfe0e4",
+        "heading-secondary": "#d9dbe2",
+        "selection": "#253d5c",
+        "scrollbar": "#383b43",
+        "nav-line": "#394d67",
+        "indicator": "#8caedb",
+        "badge-line": "#2c405c",
+        "tag-text": "#adc8ed",
+        "preview-line": "#405879",
+        "preview-fill": "#1c2d44",
+        "preview-active": "#86a9d9"
+      },
+      "light": {
+        "bg": "#f8f9fb",
+        "surface": "#edf2fa",
+        "surface-hover": "#e3ecf8",
+        "text": "#1b2029",
+        "secondary": "#474e5b",
+        "muted": "#626a78",
+        "line": "#d4dfec",
+        "accent": "#315e99",
+        "tag-bg": "#e5edf8",
+        "strong": "#29313e",
+        "heading-secondary": "#394351",
+        "selection": "#cddff5",
+        "scrollbar": "#a4acba",
+        "nav-line": "#91a8c6",
+        "indicator": "#597da9",
+        "badge-line": "#bdcfe6",
+        "tag-text": "#3b5d89",
+        "preview-line": "#8da8cb",
+        "preview-fill": "#d6e3f5",
+        "preview-active": "#5b80b4"
+      }
+    },
+    "readability": {
+      "about": "16px",
+      "descriptionDesktop": "14px",
+      "descriptionMobile": "15px",
+      "metadata": "12\u201314px"
+    },
+    "themeControl": {
+      "position": "fixed top-right",
+      "labels": ["Dark", "Light"],
+      "default": "dark",
+      "storageKey": "portfolio-theme",
+      "singleVisibleLabel": true
+    }
   },
   "components": [
     {
