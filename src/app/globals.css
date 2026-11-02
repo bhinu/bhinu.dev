@@ -79,7 +79,7 @@ strong {
   background: var(--text);
   color: var(--bg);
   padding: 12px 18px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .skip-link:focus {
   top: 16px;
@@ -117,14 +117,14 @@ h1 span {
   color: var(--muted);
 }
 .profile-role {
-  font-size: 19px;
+  font-size: 20px;
   color: #e2e3e7;
   font-weight: 500;
   letter-spacing: -0.015em;
   margin-top: 15px;
 }
 .profile-description {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--secondary);
   line-height: 1.75;
   margin-top: 22px;
@@ -135,7 +135,7 @@ h1 span {
   flex-direction: column;
   gap: 7px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 24px;
 }
 .section-nav {
@@ -150,7 +150,7 @@ h1 span {
   align-items: center;
   gap: 17px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -178,7 +178,7 @@ h1 span {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: #d9dbe2;
   padding: 9px 0;
@@ -215,7 +215,7 @@ h1 span {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 22px;
 }
@@ -235,7 +235,7 @@ h1 span {
   margin-bottom: 96px;
 }
 h2 {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 600;
   color: #e1e2e6;
@@ -244,7 +244,7 @@ h2 {
   margin-bottom: 30px;
 }
 .about-section > p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--secondary);
   margin-bottom: 19px;
   line-height: 1.9;
@@ -256,7 +256,7 @@ h2 {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .experience-row {
@@ -266,7 +266,7 @@ h2 {
   margin-bottom: 42px;
 }
 .entry-date {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.8;
   color: var(--muted);
   padding-top: 3px;
@@ -276,7 +276,7 @@ h2 {
   min-width: 0;
 }
 .entry-body h3 {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 500;
   display: flex;
@@ -289,18 +289,18 @@ h2 {
   padding: 1px 6px;
   border-radius: 4px;
   color: #b6bbdc;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0;
 }
 .entry-role {
-  font-size: 12px;
+  font-size: 14px;
   color: #c7c9d0;
   margin-top: 3px;
   line-height: 1.65;
 }
 .entry-location {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 5px;
 }
@@ -308,7 +308,7 @@ h2 {
   list-style: none;
   padding: 0;
   margin-top: 13px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--secondary);
   line-height: 1.85;
 }
@@ -324,7 +324,7 @@ h2 {
   margin-top: 15px;
 }
 .tags li {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
   padding: 4px 9px;
   background: var(--tag-bg);
@@ -335,7 +335,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   min-height: 35px;
 }
@@ -356,7 +356,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .section-title-row > a:hover {
@@ -388,7 +388,7 @@ h2 {
   transform: scale(1.04);
 }
 .project-body h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -398,18 +398,18 @@ h2 {
   gap: 7px;
 }
 .project-type {
-  font-size: 11px;
+  font-size: 13px;
   color: #cbcdd5;
   margin-top: 3px;
 }
 .project-description {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--secondary);
   line-height: 1.85;
   margin-top: 11px;
 }
 .project-note {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.75;
   margin-top: 10px;
@@ -424,7 +424,7 @@ h2 {
 }
 .storage-preview > span,
 .memory-preview > span {
-  font-size: 10px;
+  font-size: 12px;
   color: #d5d8e2;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -454,7 +454,7 @@ h2 {
   background: #111216;
 }
 .memory-preview > span {
-  font-size: 9px;
+  font-size: 11px;
 }
 .memory-preview > div {
   display: flex;
@@ -493,19 +493,19 @@ h2 {
   gap: 14px;
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 12px;
+  font-size: 14px;
 }
 .other-projects small {
   display: block;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 6px;
 }
 .page-footer {
   padding-top: 4px;
 }
 .page-footer > p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   margin-bottom: 7px;
 }
@@ -513,7 +513,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  font-size: 13px;
+  font-size: 15px;
   padding: 6px 0;
 }
 .footer-bottom {
@@ -523,7 +523,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 9px;
+  font-size: 11px;
   color: var(--muted);
 }
 .footer-bottom > a:hover {
@@ -614,7 +614,7 @@ h2 {
   }
   .profile-description {
     max-width: none;
-    font-size: 15px;
+    font-size: 16px;
   }
   .profile-meta {
     flex-direction: row;
@@ -663,24 +663,24 @@ h2 {
     margin-left: 152px;
   }
   .about-section > p {
-    font-size: 15px;
+    font-size: 16px;
   }
   .entry-body > ul:not(.tags),
   .project-description {
-    font-size: 13px;
+    font-size: 15px;
   }
   .entry-role {
-    font-size: 13px;
+    font-size: 15px;
   }
   .tags li {
-    font-size: 10px;
+    font-size: 12px;
   }
   .profile-role {
     font-size: 20px;
   }
   .entry-body h3,
   .project-body h3 {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 @media (max-width: 600px) {
@@ -694,23 +694,23 @@ h2 {
     font-size: clamp(33px, 8.5vw, 44px);
   }
   .profile-role {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 12px;
   }
   .profile-description {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 19px;
     line-height: 1.75;
   }
   .profile-meta {
-    font-size: 11px;
+    font-size: 13px;
     gap: 9px 15px;
   }
   .profile-bottom {
     gap: 12px 24px;
   }
   .resume-link {
-    font-size: 12px;
+    font-size: 14px;
   }
   .social-links {
     gap: 13px;
@@ -719,7 +719,7 @@ h2 {
     height: 36px;
   }
   .availability {
-    font-size: 10px;
+    font-size: 12px;
   }
   .content {
     padding-top: 60px;
@@ -730,16 +730,16 @@ h2 {
     scroll-margin-top: 30px;
   }
   h2 {
-    font-size: 11px;
+    font-size: 13px;
     margin-bottom: 24px;
   }
   .about-section > p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.85;
     margin-bottom: 18px;
   }
   .education-line {
-    font-size: 10px;
+    font-size: 12px;
     gap: 8px;
     flex-direction: column;
     margin-top: 23px;
@@ -751,19 +751,19 @@ h2 {
     margin-bottom: 35px;
   }
   .entry-date {
-    font-size: 10px;
-  }
-  .entry-body h3 {
-    font-size: 16px;
-  }
-  .entry-role {
     font-size: 12px;
   }
+  .entry-body h3 {
+    font-size: 18px;
+  }
+  .entry-role {
+    font-size: 14px;
+  }
   .entry-location {
-    font-size: 10px;
+    font-size: 12px;
   }
   .entry-body > ul:not(.tags) {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.8;
     margin-top: 12px;
   }
@@ -772,7 +772,7 @@ h2 {
     margin-top: 13px;
   }
   .tags li {
-    font-size: 10px;
+    font-size: 12px;
     padding: 4px 8px;
   }
   .full-resume {
@@ -783,7 +783,7 @@ h2 {
     gap: 10px;
   }
   .section-title-row > a {
-    font-size: 9px;
+    font-size: 11px;
   }
   .project-row {
     grid-template-columns: 1fr;
@@ -800,17 +800,17 @@ h2 {
     order: 1;
   }
   .project-body h3 {
-    font-size: 17px;
+    font-size: 18px;
   }
   .project-type {
-    font-size: 12px;
+    font-size: 14px;
   }
   .project-description {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.8;
   }
   .project-note {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.7;
   }
   .storage-preview,
@@ -819,7 +819,7 @@ h2 {
   }
   .storage-preview > span,
   .memory-preview > span {
-    font-size: 12px;
+    font-size: 14px;
   }
   .storage-preview > div {
     height: 24px;
@@ -836,21 +836,21 @@ h2 {
     margin-left: 0;
   }
   .other-projects a {
-    font-size: 13px;
+    font-size: 15px;
     min-height: 66px;
   }
   .other-projects small {
-    font-size: 11px;
+    font-size: 13px;
   }
   .page-footer > p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .email-link {
-    font-size: 13px;
+    font-size: 15px;
     min-height: 36px;
   }
   .footer-bottom {
-    font-size: 9px;
+    font-size: 11px;
     margin-top: 32px;
   }
   .desktop-break {

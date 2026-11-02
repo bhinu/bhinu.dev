@@ -152,3 +152,7 @@ Small radii distinguish focus outlines, current-role labels, tags, and thumbnail
 - Don't restore warm paper, rust accents, or expressive serif typography.
 - Don't add promotional taglines or decorative card shells around every section.
 - Don't describe decorative project thumbnails as interactive demonstrations.
+
+## Readability update
+
+Main prose uses 16px in About and 14–15px in experience and project descriptions; metadata and tags use 12–14px. Profile names keep their existing scale. Preserve the split layout and generous line height.
