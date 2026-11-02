@@ -99,6 +99,20 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  useEffect(() => {
+    setTheme(
+      document.documentElement.dataset.theme === "light" ? "light" : "dark",
+    );
+  }, []);
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    setTheme(next);
+    try {
+      localStorage.setItem("portfolio-theme", next);
+    } catch {}
+  };
   const [active, setActive] = useState<string>("about");
   useEffect(() => {
     const update = () => {
@@ -130,6 +144,15 @@ export default function Portfolio() {
       <a href="#content" className="skip-link">
         Skip to content
       </a>
+      <button
+        className="theme-toggle"
+        type="button"
+        onClick={toggleTheme}
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+        aria-pressed={theme === "light"}
+      >
+        <span aria-live="polite">{theme === "dark" ? "Dark" : "Light"}</span>
+      </button>
       <div className="portfolio-shell">
         <header className="profile">
           <div>

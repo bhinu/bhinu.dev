@@ -156,3 +156,7 @@ Small radii distinguish focus outlines, current-role labels, tags, and thumbnail
 ## Readability update
 
 Main prose uses 16px in About and 14–15px in experience and project descriptions; metadata and tags use 12–14px. Profile names keep their existing scale. Preserve the split layout and generous line height.
+
+## Theme control
+
+A fixed top-right pill shows only the current theme, Dark or Light. Clicking switches the full palette and accessible label. Dark is the default; explicit choice persists in localStorage. A small pre-paint script restores the palette before content renders. Mobile reserves space above the profile for the control.
