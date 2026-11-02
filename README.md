@@ -1,47 +1,21 @@
 # bhinu.dev
 
-Personal portfolio website for [Bhinu Puvvala](https://linkedin.com/in/bhinu-santosh) — Software Engineer & Data Scientist @ UW–Madison.
-
-## Stack
-
-- **Framework** — Next.js 15 (App Router)
-- **Language** — TypeScript
-- **Styling** — Tailwind CSS + CSS custom properties
-- **Animations** — Framer Motion
-- **Fonts** — Inter, JetBrains Mono
-- **Design system** — [Bento](https://typeui.sh) dark theme
-
-## Design
-
-Dark bento grid layout. Cards of varying widths arranged in a 12-column grid, with a warm peach (`#FAD4C0`) accent against a near-black (`#080809`) background. Scroll-triggered entrance animations via Framer Motion.
-
-**Sections:** Hero · Experience · Education · Skills · Projects · Contact
+Bhinu Puvvala’s engineering portfolio, built with Next.js 15, React 19, TypeScript, and CSS. Hosted on Vercel; pushes to `main` deploy to [bhinu.dev](https://bhinu.dev).
 
 ## Development
 
-```bash
-npm install
+```sh
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Validation
 
-## Deployment
-
-Deployed on Vercel. Push to `main` triggers a production deploy automatically.
-
-```bash
-git push origin main
+```sh
+npm run check
+npm run build
 ```
 
-## Project Structure
+The portfolio includes an interactive, illustrative minicol zone-map model and a MuscleMemory workflow explorer. Project claims retain benchmark conditions and link to source repositories. `public/resume.pdf` is the general SWE resume; private transcript data is never shipped.
 
-```
-src/
-└── app/
-    ├── components/
-    │   └── Portfolio.tsx   # entire site — data, components, layout
-    ├── globals.css          # design tokens, CSS classes, hover effects
-    ├── layout.tsx           # font loading, metadata
-    └── page.tsx             # entry point
-```
+Visual tokens and responsive rules are documented in DESIGN.md. Resume content is grounded in the owner’s supplied documents; PRODUCT.md records content constraints.

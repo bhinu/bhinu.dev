@@ -1,506 +1,573 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
-
-// ─── DATA ─────────────────────────────────────────────────────────────────────
+import { useState } from "react";
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Download,
+  Github,
+  Menu,
+  X,
+} from "lucide-react";
 
 const experience = [
   {
-    role: "Software Engineering Intern",
-    company: "Methix (Microsoft-backed)",
-    location: "New York, NY",
-    period: "May – Aug 2025",
-    bullets: [
-      "Reduced p95 API latency by 30% for 5,000+ weekly users via Redis caching across Python/Flask services",
-      "Cut database query time by 52% (250ms → 120ms) by redesigning PostgreSQL indexes — sustained 2× peak traffic",
-      "Shipped production observability: structured logging, distributed tracing, automated health checks",
-    ],
-  },
-  {
-    role: "Undergraduate Researcher",
-    company: "GLUE Lab, UW–Madison",
+    company: "Holos",
+    role: "Software Engineer · Industry Capstone",
+    date: "Sep 2026 — Present",
     location: "Madison, WI",
-    period: "Jan – May 2025",
-    bullets: [
-      "Distributed pipelines over 10TB+ multispectral data with Dask & GeoPandas — cut inference latency by 86%",
-      "Improved scene classification accuracy by 20% via automated feature extraction modules",
-      "Reduced false positive rate by 53% through ablation testing across geographic regions",
+    summary: "Turning human demonstrations into robot training data.",
+    details: [
+      "Building a Python ingest and labeling pipeline for Apple Vision Pro captures, with CI in Azure DevOps.",
+      "Developing action segmentation and grasp classification over 52-point bimanual hand captures: reach, grasp, insert, fasten, release.",
     ],
+    tools: "Python / Azure DevOps / Computer vision",
   },
   {
-    role: "Data Analyst Intern",
-    company: "Diyar United Company",
-    location: "Kuwait City",
-    period: "Jun – Aug 2024",
-    bullets: [
-      "Automated Python/SQL ETL pipelines processing 500K+ records/day — 3× throughput, eliminating 15+ hrs/week",
-      "Designed star-schema data warehouse + Power BI dashboards serving 10K+ clients",
+    company: "QubitSolve",
+    role: "Software Engineering Intern",
+    date: "Jun — Aug 2026",
+    location: "Morgantown, WV · NSF-funded",
+    summary: "From two hours in a spreadsheet to seconds in a service.",
+    details: [
+      "Shipped a Python feasibility engine and a FastAPI cost-estimation service spanning AWS EC2 and five quantum backends.",
+      "Replaced an ineffective stability check with interval intersection. Derived circuit gate counts analytically to stay within a 500 ms latency budget.",
+      "Built budget caps and memory-aware instance routing; presented the engine’s design and results to the CEO and board.",
     ],
+    tools: "Python / FastAPI / AWS / Qiskit",
+  },
+  {
+    company: "Methix",
+    role: "Software Engineering Intern",
+    date: "May — Aug 2025",
+    location: "New York, NY · Microsoft-backed",
+    summary: "Faster APIs. Faster releases. A backend ready for traffic.",
+    details: [
+      "Reduced p95 API latency 30% for 5,000+ weekly users with Redis caching across Flask services on Azure.",
+      "Cut PostgreSQL query latency from 250 ms to 120 ms and deployment time by 80% for a four-engineer backend team.",
+      "Secured 45+ endpoints with JWT, role-based access, and per-tier rate limits.",
+    ],
+    tools: "Flask / Redis / PostgreSQL / Azure",
+  },
+  {
+    company: "GLUE Lab",
+    role: "Undergraduate Researcher · UW–Madison",
+    date: "Jan — May 2025",
+    location: "Prof. Holly Gibbs",
+    summary: "Making ten terabytes of satellite imagery tractable.",
+    details: [
+      "Cut pipeline runtime 86% by distributing tile-level PyTorch inference with Dask over 10 TB+ of Brazilian satellite imagery.",
+      "Improved cattle-confinement classification accuracy 20% against expert-labeled ground truth by fine-tuning YOLOv8 and CSRNet.",
+    ],
+    tools: "PyTorch / Dask / GeoPandas / YOLOv8",
+  },
+  {
+    company: "Diyar United",
+    role: "Data Engineering Intern",
+    date: "Jun — Aug 2024",
+    location: "Kuwait City, Kuwait",
+    summary: "Half a million daily records. A lot less manual work.",
+    details: [
+      "Automated Python/SQL ETL pipelines processing 500K+ records per day: 3× throughput and 15+ hours of manual work saved weekly.",
+      "Designed the backing star-schema warehouse and Power BI dashboards serving 10K+ clients.",
+    ],
+    tools: "Python / SQL / Data modeling / Power BI",
   },
 ];
 
-const projects = [
-  {
-    name: "Videre",
-    badge: "🏆 Qualcomm Track Winner · MadData 2026",
-    badgeColor: "#FBBF24",
-    badgeBg: "rgba(251, 191, 36, 0.10)",
-    desc: "Fully offline, privacy-first AI video editor running entirely on-device with zero cloud dependency. Deployed Whisper & SigLIP2 via ONNX Runtime QNN for on-chip NPU acceleration — real-time transcription with word-level timestamps on edge hardware.",
-    stat: "0",
-    statLabel: "cloud deps · real-time NPU inference",
-    tech: ["Qualcomm NPU", "ONNX Runtime QNN", "Whisper", "SigLIP2", "FFmpeg", "React + Electron"],
-    cols: "col-span-12 md:col-span-7",
-  },
-  {
-    name: "WhismurAI",
-    badge: null,
-    badgeColor: "",
-    badgeBg: "",
-    desc: "Real-time audio translation pipeline supporting 20+ languages. Streaming STT → semantic translation → TTS under strict sub-second latency constraints, preserving speaker identity across passes.",
-    stat: "20+",
-    statLabel: "languages · sub-second latency",
-    tech: ["React", "FastAPI", "Web Audio API", "Deepgram", "OpenAI", "Fish Audio"],
-    cols: "col-span-12 md:col-span-5",
-  },
-  {
-    name: "Gesture",
-    badge: null,
-    badgeColor: "",
-    badgeBg: "",
-    desc: "Real-time human-computer interaction via gesture recognition. 98% accuracy at 30ms latency with 12+ user-defined commands integrated with productivity tools.",
-    stat: "98%",
-    statLabel: "accuracy · 30ms latency",
-    tech: ["TensorFlow", "MediaPipe", "OpenCV", "Electron.js"],
-    cols: "col-span-12 md:col-span-6",
-  },
-  {
-    name: "Memory Allocator",
-    badge: null,
-    badgeColor: "",
-    badgeBg: "",
-    desc: "Custom heap allocator in C with malloc/free/realloc, block splitting, coalescing, segregated free-list, and per-arena mutex locking for zero-contention concurrent allocation.",
-    stat: "0",
-    statLabel: "memory leaks · thread-safe",
-    tech: ["C", "pthreads", "Linux"],
-    cols: "col-span-12 md:col-span-6",
-  },
-];
-
-const skills: Record<string, string[]> = {
-  Languages:             ["Python", "C/C++", "TypeScript", "JavaScript", "Java", "SQL", "Bash"],
-  "Frameworks":          ["React", "FastAPI", "Flask", "Next.js", "Electron", "TensorFlow", "PyTorch", "ONNX Runtime"],
-  "Data & Processing":   ["Pandas", "NumPy", "Dask", "GeoPandas", "FFmpeg", "OpenCV"],
-  Infrastructure:        ["Docker", "Redis", "PostgreSQL", "Kubernetes", "MongoDB", "MySQL", "CI/CD"],
-};
-
-const accentSkills = new Set([
-  "Python", "C/C++", "TypeScript", "React", "FastAPI", "Flask", "Docker", "Redis", "PostgreSQL",
-]);
-
-// ─── ANIMATION VARIANTS ───────────────────────────────────────────────────────
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 14 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
-};
-
-const stagger: Variants = {
-  hidden: {},
-  show:   { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-
-// ─── NAV ──────────────────────────────────────────────────────────────────────
-
-function Nav() {
+function StorageDemo() {
+  const [pruning, setPruning] = useState(true);
   return (
-    <nav
-      style={{
-        position: "sticky", top: 0, zIndex: 100,
-        background: "rgba(8, 8, 9, 0.82)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid var(--border)",
-        padding: "0 24px",
-        height: "52px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
-      <span style={{ fontSize: "14px", fontWeight: 600, color: "var(--t1)", letterSpacing: "-0.01em" }}>
-        Bhinu Puvvala
-      </span>
-      <div style={{ display: "flex", gap: "4px" }}>
-        {[
-          { label: "LinkedIn", href: "https://linkedin.com/in/bhinu-santosh", icon: <Linkedin size={14} /> },
-          { label: "GitHub",   href: "https://github.com/bhinu",              icon: <Github size={14} /> },
-          { label: "Email",    href: "mailto:bhinusantosh@gmail.com",          icon: <Mail size={14} /> },
-        ].map(({ label, href, icon }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith("http") ? "_blank" : undefined}
-            rel="noopener noreferrer"
-            className="nav-link"
-          >
-            {icon}
-            <span className="hidden sm:inline">{label}</span>
-          </a>
-        ))}
+    <div className="storage-demo">
+      <div className="demo-top">
+        <span>minicol / query explorer</span>
+        <span className="live-mark">Interactive model</span>
       </div>
-    </nav>
-  );
-}
-
-// ─── HERO ─────────────────────────────────────────────────────────────────────
-
-function Hero() {
-  return (
-    <motion.section
-      initial="hidden"
-      animate="show"
-      variants={stagger}
-      style={{ marginBottom: "40px", padding: "0 4px" }}
-    >
-      {/* Status badge */}
-      <motion.div variants={fadeUp}>
-        <span
-          style={{
-            display: "inline-flex", alignItems: "center", gap: "8px",
-            fontSize: "12px", fontWeight: 500,
-            color: "var(--success)",
-            background: "var(--success-dim)",
-            border: "1px solid rgba(74, 222, 128, 0.2)",
-            padding: "4px 10px", borderRadius: "100px",
-            marginBottom: "20px",
-            fontFamily: "var(--font-mono), monospace",
-            letterSpacing: "0.02em",
-          }}
+      <div className="query">
+        <span>SELECT</span> count(*) <span>FROM</span> events
+        <br />
+        <span>WHERE</span> id <span>BETWEEN</span> 0 <span>AND</span> 65535;
+      </div>
+      <div className="demo-control">
+        <span>Row groups read</span>
+        <button
+          aria-pressed={pruning}
+          onClick={() => setPruning(!pruning)}
+          className="toggle"
         >
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--success)", animation: "pulse-dot 2s infinite", display: "block" }} />
-          Available for opportunities · Summer 2026
-        </span>
-      </motion.div>
-
-      {/* Heading */}
-      <motion.h1
-        variants={fadeUp}
-        style={{
-          fontSize: "clamp(40px, 6vw, 68px)",
-          fontWeight: 700,
-          letterSpacing: "-0.03em",
-          lineHeight: 1.05,
-          color: "var(--t1)",
-          marginBottom: "16px",
-        }}
-      >
-        Bhinu{" "}
-        <span style={{ color: "var(--primary)" }}>Puvvala</span>
-      </motion.h1>
-
-      {/* Sub */}
-      <motion.p
-        variants={fadeUp}
-        style={{
-          fontSize: "17px", color: "var(--t2)", fontWeight: 400,
-          maxWidth: "520px", lineHeight: 1.65, marginBottom: "28px",
-        }}
-      >
-        Software Engineer & Data Scientist building systems that perform at scale — from distributed pipelines to on-device AI.
-      </motion.p>
-
-      {/* CTAs */}
-      <motion.div variants={fadeUp} style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-        <a href="mailto:bhinusantosh@gmail.com" className="btn-primary">
-          Get in touch <ArrowUpRight size={15} />
-        </a>
-        <a href="https://github.com/bhinu" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-          <Github size={15} /> github.com/bhinu
-        </a>
-        <a href="https://linkedin.com/in/bhinu-santosh" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-          <Linkedin size={15} /> LinkedIn
-        </a>
-      </motion.div>
-    </motion.section>
-  );
-}
-
-// ─── EXPERIENCE CARD ──────────────────────────────────────────────────────────
-
-function ExperienceCard() {
-  return (
-    <motion.div
-      className="bento-card col-span-12 md:col-span-7"
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
-    >
-      <p className="card-label">Experience</p>
-      <div>
-        {experience.map((exp, i) => (
-          <div
-            key={exp.company}
-            style={{
-              paddingTop:    i === 0 ? 0 : 16,
-              paddingBottom: i === experience.length - 1 ? 0 : 16,
-              borderBottom:  i < experience.length - 1 ? "1px solid var(--border)" : "none",
-            }}
-          >
-            {/* Role + date */}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 4 }}>
-              <span style={{ fontSize: 15, fontWeight: 600, color: "var(--t1)", letterSpacing: "-0.01em" }}>
-                {exp.role}
-              </span>
-              <span style={{ fontSize: 12, color: "var(--t3)", fontFamily: "var(--font-mono), monospace", whiteSpace: "nowrap", paddingTop: 2 }}>
-                {exp.period}
-              </span>
-            </div>
-
-            {/* Company */}
-            <p style={{ fontSize: 13, color: "var(--primary)", fontWeight: 500, marginBottom: 8 }}>
-              {exp.company} · {exp.location}
-            </p>
-
-            {/* Bullets */}
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 5 }}>
-              {exp.bullets.map((b, bi) => (
-                <li key={bi} style={{ display: "flex", gap: 8, fontSize: 13, color: "var(--t2)", lineHeight: 1.55 }}>
-                  <span style={{ color: "var(--t3)", flexShrink: 0, marginTop: 1 }}>—</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
+          Zone maps <span>{pruning ? "ON" : "OFF"}</span>
+          <i className={pruning ? "switch enabled" : "switch"} />
+        </button>
+      </div>
+      <div className="row-groups" aria-hidden="true">
+        {Array.from({ length: 16 }, (_, i) => (
+          <div key={i} className={!pruning || i === 0 ? "read" : "skipped"}>
+            <span>{String(i).padStart(2, "0")}</span>
+            <div />
+            <div />
+            <div />
           </div>
         ))}
       </div>
-    </motion.div>
-  );
-}
-
-// ─── EDUCATION CARD ───────────────────────────────────────────────────────────
-
-function EducationCard() {
-  return (
-    <motion.div
-      className="bento-card col-span-12 md:col-span-5"
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: "easeOut", delay: 0.06 }}
-    >
-      <p className="card-label">Education</p>
-
-      <p style={{ fontSize: 17, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--t1)", marginBottom: 4 }}>
-        University of Wisconsin–Madison
-      </p>
-      <p style={{ fontSize: 13, color: "var(--t2)", lineHeight: 1.55, marginBottom: 6 }}>
-        B.S. Computer Science & Data Science<br />Minor: Economic Analytics
-      </p>
-      <p style={{ fontSize: 12, color: "var(--t3)", fontFamily: "var(--font-mono), monospace", marginBottom: 16 }}>
-        Expected May 2027
-      </p>
-
-      {/* Stats */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 16 }}>
-        {[
-          { val: "3.74", label: "GPA · Dean's List" },
-          { val: "May '27", label: "Graduating" },
-        ].map(({ val, label }) => (
-          <div key={label} className="stat-box">
-            <div className="stat-val">{val}</div>
-            <div className="stat-label">{label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Coursework */}
-      <div style={{ paddingTop: 16, borderTop: "1px solid var(--border)" }}>
-        <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--t3)", marginBottom: 10 }}>
-          Coursework
+      <div className="demo-result" aria-live="polite">
+        <strong>
+          {pruning ? "01" : "16"}
+          <small> / 16</small>
+        </strong>
+        <p>
+          {pruning
+            ? "Read what matters. Skip the rest."
+            : "Every group read. Even the irrelevant ones."}
+          <span>
+            {pruning
+              ? "15 groups eliminated before reading column data."
+              : "Turn zone maps on to prune irrelevant groups."}
+          </span>
         </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-          {["Operating Systems", "Algorithms & DS", "Big Data Systems", "Computer Vision", "Econometrics", "Machine Org."].map((c) => (
-            <span key={c} className="pill">{c}</span>
-          ))}
-        </div>
       </div>
-    </motion.div>
+      <p className="demo-note">
+        Illustrative sorted data · a model of the pruning mechanism, not a live
+        engine benchmark.
+      </p>
+    </div>
   );
 }
 
-// ─── SKILLS CARD ──────────────────────────────────────────────────────────────
-
-function SkillsCard() {
+function VidereVisual() {
   return (
-    <motion.div
-      className="bento-card col-span-12"
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: "easeOut" }}
+    <div
+      className="videre-visual"
+      aria-label="Illustration of Videre’s transcript-driven editing workflow"
     >
-      <p className="card-label">Technical Skills</p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-        {Object.entries(skills).map(([group, items]) => (
-          <div key={group}>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--t3)", marginBottom: 10 }}>
-              {group}
-            </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-              {items.map((skill) => (
-                <span key={skill} className={`pill${accentSkills.has(skill) ? " accent" : ""}`}>
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="video-header">
+        <span>videre</span>
+        <span>
+          LOCAL INFERENCE <i />
+        </span>
       </div>
-    </motion.div>
-  );
-}
-
-// ─── PROJECT CARD ─────────────────────────────────────────────────────────────
-
-function ProjectCard({ p, delay }: { p: typeof projects[0]; delay: number }) {
-  return (
-    <motion.a
-      href="https://github.com/bhinu"
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`project-card ${p.cols}`}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: "easeOut", delay }}
-    >
-      <ArrowUpRight size={16} className="arrow" />
-
-      {p.badge && (
-        <div
-          style={{
-            display: "inline-flex", alignItems: "center", gap: 5,
-            fontSize: 11, fontWeight: 600,
-            color: p.badgeColor,
-            background: p.badgeBg,
-            border: `1px solid ${p.badgeColor}44`,
-            padding: "3px 8px", borderRadius: "100px",
-            marginBottom: 12,
-            fontFamily: "var(--font-mono), monospace",
-          }}
+      <div className="video-scene">
+        <svg
+          viewBox="0 0 500 180"
+          role="img"
+          aria-label="Abstract landscape video frame"
         >
-          {p.badge}
-        </div>
-      )}
-
-      <p style={{ fontSize: 18, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--t1)", marginBottom: 6 }}>
-        {p.name}
-      </p>
-      <p style={{ fontSize: 13, color: "var(--t2)", lineHeight: 1.6, marginBottom: 16 }}>
-        {p.desc}
-      </p>
-
-      <div style={{ marginBottom: 16 }}>
-        <div style={{ fontSize: 28, fontWeight: 800, letterSpacing: "-0.03em", color: "var(--primary)", lineHeight: 1, marginBottom: 4 }}>
-          {p.stat}
-        </div>
-        <div style={{ fontSize: 11, color: "var(--t3)", fontWeight: 500 }}>{p.statLabel}</div>
+          <path
+            d="M0 180V118L105 40L192 126L280 18L405 122L457 74L500 116V180Z"
+            fill="#768d76"
+          />
+          <path d="M0 180L146 113L227 162L360 67L500 169V180Z" fill="#bdd2a4" />
+          <circle cx="405" cy="38" r="17" fill="#e8e4b2" />
+        </svg>
+        <span>Preview illustration</span>
       </div>
-
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-        {p.tech.map((t) => (
-          <span key={t} className="tech-tag">{t}</span>
+      <div className="transcript">
+        <span>00:12</span>
+        <p>
+          Edit video <mark>by editing words.</mark>
+        </p>
+      </div>
+      <div className="timeline">
+        {[
+          25, 40, 65, 30, 75, 90, 40, 60, 35, 85, 55, 95, 65, 30, 80, 50, 70,
+          40, 60, 85, 45, 30, 70, 90, 55, 40, 75, 35, 65, 80,
+        ].map((v, i) => (
+          <i key={i} style={{ height: `${v}%` }} />
         ))}
       </div>
-    </motion.a>
-  );
-}
-
-// ─── CONTACT ──────────────────────────────────────────────────────────────────
-
-function Contact() {
-  return (
-    <motion.div
-      className="bento-card"
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      style={{ textAlign: "center", padding: "52px 48px", marginTop: 10, position: "relative" }}
-    >
-      <div className="contact-glow" />
-      <p style={{ fontSize: 32, fontWeight: 700, letterSpacing: "-0.03em", color: "var(--t1)", marginBottom: 10 }}>
-        Let&apos;s build something.
-      </p>
-      <p style={{ fontSize: 15, color: "var(--t2)", marginBottom: 32 }}>
-        Open to SWE internships, research roles, and interesting side projects.
-      </p>
-      <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
-        <a href="mailto:bhinusantosh@gmail.com" className="btn-primary">
-          bhinusantosh@gmail.com <ArrowUpRight size={15} />
-        </a>
-        <a href="https://linkedin.com/in/bhinu-santosh" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-          <Linkedin size={15} /> LinkedIn
-        </a>
-        <a href="https://github.com/bhinu" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-          <Github size={15} /> GitHub
-        </a>
+      <div className="video-footer">
+        <span>Whisper → Transcript → FFmpeg</span>
+        <span>100% on device</span>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-// ─── PORTFOLIO ────────────────────────────────────────────────────────────────
+function MemoryVisual() {
+  const [step, setStep] = useState(0);
+  const labels = [
+    "Agent meets a changed page",
+    "Human corrects the workflow",
+    "Fix stored with page landmarks",
+    "Valid fix recalled; unsafe retries blocked",
+  ];
+  return (
+    <div className="memory-visual">
+      <div className="memory-head">
+        <span>MuscleMemory</span>
+        <span>Workflow model</span>
+      </div>
+      <div className="memory-flow">
+        {["Observe", "Correct", "Remember", "Replay"].map((label, i) => (
+          <button
+            key={label}
+            onClick={() => setStep(i)}
+            aria-pressed={step === i}
+            className={step === i ? "active" : ""}
+          >
+            <span>
+              {i < step ? <Check size={16} /> : String(i + 1).padStart(2, "0")}
+            </span>
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="memory-caption" aria-live="polite">
+        <span>{String(step + 1).padStart(2, "0")} / 04</span>
+        <p>{labels[step]}</p>
+      </div>
+      <p className="memory-note">Human corrections become reusable memory.</p>
+    </div>
+  );
+}
 
 export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
-      <div className="dot-grid" />
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <Nav />
-
-        <main style={{ maxWidth: 1160, margin: "0 auto", padding: "48px 24px 80px" }}>
-          <Hero />
-
-          {/* Background section */}
-          <p className="section-label" style={{ marginBottom: 12, padding: "0 4px" }}>Background</p>
-          <div className="grid grid-cols-12 gap-[10px] mb-[10px]">
-            <ExperienceCard />
-            <EducationCard />
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <header className="site-header">
+        <a className="wordmark" href="#" aria-label="Bhinu Puvvala home">
+          bhinu<span>.</span>
+        </a>
+        <nav
+          id="mobile-nav"
+          aria-label="Main navigation"
+          className={menuOpen ? "navigation open" : "navigation"}
+        >
+          {[
+            ["Work", "#work"],
+            ["Experience", "#experience"],
+            ["About", "#about"],
+          ].map(([label, href]) => (
+            <a key={href} href={href} onClick={() => setMenuOpen(false)}>
+              {label}
+            </a>
+          ))}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-resume"
+          >
+            Resume <ArrowUpRight size={15} />
+          </a>
+        </nav>
+        <button
+          className="menu-button"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X /> : <Menu />}
+        </button>
+      </header>
+      <main id="main">
+        <section className="intro wrap" aria-labelledby="intro-title">
+          <div className="intro-top">
+            <p>Bhinu Puvvala</p>
+            <p>Software engineer · Madison, WI</p>
           </div>
-          <div className="grid grid-cols-12 gap-[10px]">
-            <SkillsCard />
+          <h1 id="intro-title">
+            Good systems.
+            <br />
+            Down to the <em>details.</em>
+          </h1>
+          <div className="intro-bottom">
+            <p>
+              I build across the stack, from the bytes a database reads to the
+              decisions an AI agent makes. Computer Science & Data Science at
+              UW–Madison, graduating May 2027.
+            </p>
+            <div className="intro-actions">
+              <a className="button primary" href="#work">
+                Explore my work <ArrowDown size={17} />
+              </a>
+              <a className="text-link" href="mailto:bhinusantosh@gmail.com">
+                Let’s talk <ArrowUpRight size={17} />
+              </a>
+            </div>
           </div>
-
-          {/* Projects section */}
-          <div style={{ margin: "40px 0 12px", padding: "0 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <p className="section-label">Projects</p>
+          <div className="current">
+            <span className="status-dot" />
+            Currently at Holos <span className="current-separator">/</span>
+            <span>Teaching robots through human demonstrations.</span>
+          </div>
+        </section>
+        <section
+          id="work"
+          className="work-section wrap"
+          aria-labelledby="work-title"
+        >
+          <div className="section-heading">
+            <h2 id="work-title">
+              Selected work<span> / </span>
+            </h2>
+            <span>Systems, intelligence, and everything between.</span>
+          </div>
+          <article className="featured-project">
+            <div className="project-copy">
+              <div className="project-category">C++17 · Storage systems</div>
+              <h3>minicol</h3>
+              <p className="project-deck">
+                The fastest data is the data you never read.
+              </p>
+              <p>
+                A columnar storage engine built from scratch. Adaptive
+                compression, min/max zone maps, and batch execution turn storage
+                layout into less work for every query.
+              </p>
+              <div className="project-proof">
+                <strong>19.7×</strong>
+                <span>
+                  faster dictionary string equality
+                  <br />
+                  vs. a naive row store*
+                </span>
+              </div>
+              <a
+                className="text-link"
+                href="https://github.com/bhinu/minicol"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore the engine <ArrowUpRight size={17} />
+              </a>
+              <p className="footnote">
+                *1M synthetic rows, measured benchmark. Educational prototype;
+                results depend on workload and machine.
+              </p>
+            </div>
+            <StorageDemo />
+          </article>
+          <div className="project-pair">
+            <article className="project-secondary">
+              <VidereVisual />
+              <div className="project-heading">
+                <h3>Videre</h3>
+                <a
+                  href="https://github.com/bhinu/Videre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Videre on GitHub"
+                >
+                  <ArrowUpRight />
+                </a>
+              </div>
+              <p className="project-tagline">Your footage stays yours.</p>
+              <p>
+                An offline AI video editor running Whisper and SigLIP2 on a
+                Snapdragon NPU. I owned the React, Electron, and TypeScript
+                front end and connected it to the local inference runtime.
+              </p>
+              <div className="project-bottom">
+                <span className="award">
+                  Qualcomm track winner · MadData 2026
+                </span>
+                <span>Built in 36 hours</span>
+              </div>
+            </article>
+            <article className="project-secondary">
+              <MemoryVisual />
+              <div className="project-heading">
+                <h3>MuscleMemory</h3>
+                <a
+                  href="https://github.com/bhinu/MuscleMemory"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View MuscleMemory on GitHub"
+                >
+                  <ArrowUpRight />
+                </a>
+              </div>
+              <p className="project-tagline">
+                An agent that learns from the fix.
+              </p>
+              <p>
+                A browser agent that remembers human corrections, validates page
+                landmarks, and blocks retries of irreversible actions. Python,
+                Playwright, FastAPI, and SQLite.
+              </p>
+              <div className="project-bottom">
+                <span>40% fewer manual interventions</span>
+                <span>30 simulated days of site changes</span>
+              </div>
+            </article>
+          </div>
+          <div className="more-work">
+            <span>Also built</span>
+            <a
+              href="https://github.com/bhinu/WhismurAI"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhismurAI{" "}
+              <span>Real-time speech translation · 20+ languages</span>
+              <ArrowUpRight size={18} />
+            </a>
+            <a
+              href="https://github.com/bhinu/Gesture"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gesture <span>Gesture-based computer control</span>
+              <ArrowUpRight size={18} />
+            </a>
+            <a
+              className="all-work"
+              href="https://github.com/bhinu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              All repositories <Github size={17} />
+            </a>
+          </div>
+        </section>
+        <section
+          id="experience"
+          className="experience-section"
+          aria-labelledby="experience-title"
+        >
+          <div className="wrap">
+            <div className="section-heading">
+              <h2 id="experience-title">
+                Where I’ve built<span> / </span>
+              </h2>
+              <span>From production services to research pipelines.</span>
+            </div>
+            <div className="experience-list">
+              {experience.map((item, i) => (
+                <article className="experience" key={item.company}>
+                  <div className="experience-meta">
+                    <p className="date">{item.date}</p>
+                    <h3>
+                      {item.company}
+                      {i === 0 && (
+                        <span
+                          className="present-dot"
+                          aria-label="Current role"
+                        />
+                      )}
+                    </h3>
+                    <p>{item.role}</p>
+                    <span className="location">{item.location}</span>
+                  </div>
+                  <div className="experience-story">
+                    <h4>{item.summary}</h4>
+                    <ul>
+                      {item.details.map((d) => (
+                        <li key={d}>{d}</li>
+                      ))}
+                    </ul>
+                    <p className="tools">{item.tools}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section
+          id="about"
+          className="about-section wrap"
+          aria-labelledby="about-title"
+        >
+          <div>
+            <h2 id="about-title">
+              Curiosity, all the
+              <br />
+              way down.
+            </h2>
+            <p className="about-lead">
+              I like finding the part of a system that doesn’t have to be slow,
+              fragile, or complicated.
+            </p>
+            <p>
+              That’s taken me from quantum simulation tooling to satellite
+              imagery, from a C++ storage engine to AI that runs entirely on a
+              laptop. I’m drawn to work where understanding the details changes
+              what you can build.
+            </p>
+            <a
+              className="text-link"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download my resume <Download size={17} />
+            </a>
+          </div>
+          <aside className="education">
+            <h3>University of Wisconsin–Madison</h3>
+            <p>B.S. Computer Science & Data Science</p>
+            <p>Certificate in Economic Analytics</p>
+            <div className="education-facts">
+              <span>
+                May 2027 <small>Expected graduation</small>
+              </span>
+              <span>
+                3.76 / 4.0 <small>GPA · Dean’s List</small>
+              </span>
+            </div>
+            <h4>My working toolkit</h4>
+            <dl>
+              <div>
+                <dt>Build</dt>
+                <dd>Python, C/C++, TypeScript, React, FastAPI, Flask</dd>
+              </div>
+              <div>
+                <dt>Scale</dt>
+                <dd>PostgreSQL, Redis, Docker, AWS, Azure, CI/CD</dd>
+              </div>
+              <div>
+                <dt>Learn</dt>
+                <dd>PyTorch, Dask, ONNX Runtime, Qiskit, Playwright</dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+        <section className="contact wrap" aria-labelledby="contact-title">
+          <div>
+            <p>Looking ahead to new grad roles in 2027.</p>
+            <h2 id="contact-title">
+              Let’s build
+              <br />
+              <em>something good.</em>
+            </h2>
+          </div>
+          <div className="contact-links">
+            <a href="mailto:bhinusantosh@gmail.com">
+              bhinusantosh@gmail.com <ArrowUpRight size={22} />
+            </a>
+            <a
+              href="https://linkedin.com/in/bhinu-puvvala"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <ArrowUpRight size={22} />
+            </a>
             <a
               href="https://github.com/bhinu"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontSize: 12, color: "var(--t3)", textDecoration: "none", transition: "color 0.15s ease" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--t2)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--t3)")}
             >
-              View all on GitHub →
+              GitHub <ArrowUpRight size={22} />
             </a>
           </div>
-          <div className="grid grid-cols-12 gap-[10px]">
-            {projects.map((p, i) => (
-              <ProjectCard key={p.name} p={p} delay={i * 0.05} />
-            ))}
-          </div>
-
-          <Contact />
-        </main>
-
-        <footer style={{ textAlign: "center", padding: "24px", fontSize: 12, color: "var(--t3)", borderTop: "1px solid var(--border)" }}>
-          Bhinu Puvvala · {new Date().getFullYear()}
-        </footer>
-      </div>
-    </div>
+        </section>
+      </main>
+      <footer className="site-footer wrap">
+        <a href="#" className="wordmark">
+          bhinu<span>.</span>
+        </a>
+        <p>© {new Date().getFullYear()} Bhinu Puvvala</p>
+        <a href="#main">
+          Back to top <ArrowRight size={14} />
+        </a>
+      </footer>
+    </>
   );
 }

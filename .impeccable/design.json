@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "title": "Design System: Engineering journal",
+  "extensions": {
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1600px",
+        "query": "min-width"
+      },
+      {
+        "name": "tablet",
+        "value": "1000px",
+        "query": "max-width"
+      },
+      {
+        "name": "mobile",
+        "value": "700px",
+        "query": "max-width"
+      }
+    ],
+    "motion": [
+      {
+        "name": "action",
+        "value": "0.2s",
+        "purpose": "Primary background and link icon transitions."
+      },
+      {
+        "name": "switch",
+        "value": "0.25s",
+        "purpose": "Zone-map switch thumb translation."
+      },
+      {
+        "name": "row-group",
+        "value": "0.3s",
+        "purpose": "Row-group background and border changes."
+      }
+    ],
+    "focus": {
+      "outline": "2px solid var(--accent)",
+      "outlineOffset": "5px"
+    },
+    "shadows": []
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square ink action with rust hover.",
+      "html": "<a class=\"ds-primary\" href=\"#work\">Explore work \u2197</a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:22px;min-height:50px;padding:13px 20px;background:var(--ink);color:var(--paper);font:500 14px Inter,sans-serif;text-decoration:none;transition:background .2s}.ds-primary:hover{background:var(--accent)}.ds-primary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Text link",
+      "kind": "button",
+      "description": "Open secondary action.",
+      "html": "<a class=\"ds-link\" href=\"#contact\">Get in touch \u2197</a>",
+      "css": ".ds-link{display:inline-flex;gap:12px;padding:8px 0;color:var(--ink);font:600 14px Inter,sans-serif;text-decoration:none}.ds-link:hover{color:var(--accent)}.ds-link:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Open text navigation with rust hover.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Preview navigation\"><a href=\"#work\">Work</a><a href=\"#about\">About</a></nav>",
+      "css": ".ds-nav{display:flex;gap:34px;font:14px Inter,sans-serif;color:var(--ink)}.ds-nav a{padding:10px 0;color:inherit;text-decoration:none}.ds-nav a:hover{color:var(--accent)}.ds-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Zone-map control",
+      "kind": "custom",
+      "description": "Static preview of the pressed zone-map button; the application updates the model.",
+      "html": "<div class=\"ds-storage\"><button class=\"ds-toggle\" aria-pressed=\"true\">Zone maps <span>ON</span><i></i></button></div>",
+      "css": ".ds-storage{padding:20px;background:var(--dark)}.ds-toggle{display:flex;align-items:center;gap:9px;padding:8px 0 8px 8px;border:0;background:none;color:var(--paper);font:10px Inter,sans-serif;cursor:pointer}.ds-toggle span{color:var(--green);width:22px}.ds-toggle i{position:relative;width:25px;height:14px;border:1px solid var(--green);border-radius:10px;background:var(--green)}.ds-toggle i:after{content:\"\";position:absolute;width:8px;height:8px;left:13px;top:2px;border-radius:50%;background:var(--dark)}.ds-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Memory stage",
+      "kind": "custom",
+      "description": "Static preview of a selected workflow stage; the application changes the caption on activation.",
+      "html": "<div class=\"ds-memory\"><button class=\"ds-stage\" aria-pressed=\"true\"><span>01</span>Observe</button></div>",
+      "css": ".ds-memory{padding:23px 28px;background:#e9ddd1;color:#533d30}.ds-stage{display:flex;flex-direction:column;align-items:center;gap:13px;padding:0;background:none;border:0;color:inherit;font:11px Inter,sans-serif;cursor:pointer}.ds-stage span{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #8d4229;border-radius:50%;background:#8d4229;color:#fff3e9;font-size:10px;transition:background .2s}.ds-stage:focus-visible{outline:2px solid var(--accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Engineering journal",
+    "overview": "Warm paper, precise ink, and restrained rust give technical work an editorial voice. Open typography and thin rules establish hierarchy; project models explain behavior through small, legible interactions.",
+    "keyCharacteristics": [
+      "Open typography with serif emphasis.",
+      "Flat surfaces, thin rules, and distinct demonstration grounds.",
+      "Direct, keyboard-operable project models."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve open typography, thin rules, and model-specific grounds.",
+      "Do communicate interactive state in text and accessible button state as well as color.",
+      "Do retain model labels and benchmark qualifications alongside results."
+    ],
+    "donts": [
+      "Don't enclose every content section in a rounded card or introduce decorative shadows.",
+      "Don't hide essential copy behind motion or remove keyboard focus treatment."
+    ]
+  }
+}

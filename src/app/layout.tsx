@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,10 +15,28 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bhinu.dev"),
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Bhinu Puvvala — Software Engineer",
+    description:
+      "Good systems. Down to the details. Storage engines, production backends, and on-device AI.",
+    url: "https://bhinu.dev",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
   title: "Bhinu Puvvala — Software Engineer",
   description:
-    "Software Engineer & Data Scientist building systems that perform at scale — from distributed pipelines to on-device AI.",
+    "Software engineer building storage engines, production backends, and on-device AI. Explore work by Bhinu Puvvala, CS & Data Science at UW–Madison, graduating May 2027.",
 };
 
 export default function RootLayout({
@@ -28,7 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
+      >
         {children}
       </body>
     </html>
